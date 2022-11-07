@@ -1,0 +1,68 @@
+# Snake Water Gun
+import random
+
+game = ["Snake","Water","Gun"]
+
+def Game():
+    if inp == "s" or inp == "S":
+        return "Snake"
+    elif inp == "w" or inp == "W":
+        return "Water"
+    elif inp == "G" or inp == "g":
+        return "Gun"
+
+
+cmp = random.choice(game)
+nn = 1
+i = 0
+j = 0
+print("\t\t***Welcome to Snake-Water-Gun Game***\n\n")
+print("You will get 10 Chances.\n"
+      "Over all Points will decide that who won.\nAll the best!")
+
+while(nn != 10):
+    print("\n\nAttempt:",nn)
+    print("Enter: \ns or S for Snake\nw or W for Water\ng or G for Gun\n")
+    inp = input()
+    Game()
+    print("You Chose:-",Game())
+    print("Computer chose:-",cmp)
+    if inp == "S" or inp == "s" and cmp == "Snake":
+        print("Match Draw!")
+    elif inp == "S" or inp == "s" and cmp == "Water":
+        print("You Won!")
+        i += 1
+    elif inp == "S" or inp == "s" and cmp == "Gun":
+        print("Oh!, you have lost")
+        j += 1
+    elif inp == "W" or inp == "w" and cmp == "Snake":
+        print("oh!, you have lost")
+        j += 1
+    elif inp == "W" or inp == "w" and cmp == "Water":
+        print("Match Draw!")
+    elif inp == "W" or inp == "w" and cmp == "Gun":
+        print("Yeah!, You Won")
+        i += 1
+    elif inp == "G" or inp == "g" and cmp == "Snake":
+        print("Yeah!, You Won")
+        i += 1
+    elif inp == "G" or inp == "g" and cmp == "Water":
+        print("Oh!, you have lost!")
+        j += 1
+    elif inp == "G" or inp == "g" and cmp == "Gun":
+        print("Match draw!")
+    else: print("Enter Valid Input.")
+
+    nn = nn + 1
+
+
+print("\nComputer Points :",j)
+print("\nYours Points :",i)
+if i == j:
+    print("You Both got Same Points.")
+    print("Match has been draw.")
+elif i > j:
+    print("Congrates!\nYou have been won by",i-j,"Points.")
+elif i < j:
+    print("Oh!\nYou have beesn loose by",j-i,"Points.")
+
